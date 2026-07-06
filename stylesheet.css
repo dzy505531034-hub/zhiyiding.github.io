@@ -1,0 +1,538 @@
+/* ===== 基础重置与字体 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1e293b;
+  background: #f8fafc;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #ef4444;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* ===== 布局容器 ===== */
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 10px 28px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Hero 区域 ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  margin-bottom: 28px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.name {
+  font-size: 46px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.name-cn {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.72em;
+}
+
+.tagline {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 26px;
+}
+
+.highlight-red {
+  color: #ef4444;
+  font-weight: 800;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+  background: #ffffff;
+}
+
+.btn-outline:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 0;
+  color: #475569;
+  position: relative;
+}
+
+.link:hover {
+  color: #2563eb;
+}
+
+.link-bilibili:hover {
+  color: #FF6699;
+}
+
+.link-bilibili:hover::after {
+  background: #FF6699;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ef4444;
+  transition: width 0.2s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.hero-photo {
+  flex: 0 0 230px;
+}
+
+.hero-photo a {
+  display: block;
+}
+
+.hero-photo img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-photo img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== 章节标题 ===== */
+.section-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 26px;
+  background: linear-gradient(180deg, #2563eb, #ef4444);
+  border-radius: 3px;
+}
+
+.subsection-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subsection-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+/* ===== News & Awards ===== */
+.news-list,
+.awards-list {
+  list-style: none;
+}
+
+.news-list li,
+.awards-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 15px;
+  color: #334155;
+}
+
+.news-list li:last-child,
+.awards-list li:last-child {
+  border-bottom: none;
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.date-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.date-red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+/* ===== Research ===== */
+.note {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.research-item {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.research-image {
+  flex: 0 0 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+}
+
+.research-image img {
+  width: 100%;
+  display: block;
+}
+
+.research-content {
+  flex: 1;
+}
+
+.research-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.research-title a {
+  color: #2563eb;
+}
+
+.research-title a:hover {
+  color: #ef4444;
+}
+
+.research-meta {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.research-links {
+  display: flex;
+  gap: 16px;
+  margin: 14px 0;
+}
+
+.research-links a {
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+}
+
+.research-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ef4444;
+  transition: width 0.2s ease;
+}
+
+.research-links a:hover::after {
+  width: 100%;
+}
+
+.research-desc {
+  color: #475569;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.research-status {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: #fef2f2;
+  color: #ef4444;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ===== Education ===== */
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.edu-logo {
+  width: 84px;
+  height: auto;
+  border-radius: 16px;
+  padding: 8px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+}
+
+.edu-info h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.edu-info p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 3px;
+}
+
+/* ===== Study ===== */
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.study-card {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #f1f5f9;
+}
+
+/* ===== Dream School ===== */
+.dream-school {
+  text-align: center;
+}
+
+.dream-school img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.dream-caption {
+  margin-top: 18px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: 0.02em;
+}
+
+.dream-text {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 32px 0 8px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+footer a {
+  color: #64748b;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #2563eb;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 18px;
+  }
+
+  .card {
+    padding: 26px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-photo {
+    flex: 0 0 auto;
+    max-width: 180px;
+  }
+
+  .contact-links {
+    justify-content: center;
+  }
+
+  .research-item {
+    flex-direction: column;
+  }
+
+  .research-image {
+    flex: 0 0 auto;
+  }
+
+  .study-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+/* ===== 校徽背景动画 ===== */
+.bg-layer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.badge-row {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: center center;
+}
+
+.badge-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.badge-strip img {
+  width: 128px;
+  height: 128px;
+  display: block;
+  opacity: 0.07;
+  flex-shrink: 0;
+}
+
+@keyframes scrollBlue {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes scrollRed {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.badge-blue {
+  animation: scrollBlue 25s linear infinite;
+}
+
+.badge-red {
+  animation: scrollRed 25s linear infinite;
+}
