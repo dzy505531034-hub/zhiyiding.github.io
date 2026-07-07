@@ -193,8 +193,16 @@
     <div class="overlay-bg"></div>
     <div class="overlay-text" id="overlayText">Good Luck</div>
     <div class="game-scene" id="gameScene">
-      <h2>Function Frontier</h2>
-      <p>Game scene ready. Replace this with your actual game canvas.</p>
+      <div class="redirect-loader" id="redirectLoader">
+        <h2>Function Frontier</h2>
+        <p>Preparing your game...</p>
+        <div class="loader-bar"><span></span></div>
+      </div>
+      <div class="redirect-error" id="redirectError">
+        <h2>Redirect Failed</h2>
+        <p>Unable to reach game.starryrain.top.</p>
+        <a href="https://game.starryrain.top" class="btn btn-game">Try Again</a>
+      </div>
     </div>
   </div>
 

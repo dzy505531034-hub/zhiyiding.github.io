@@ -564,6 +564,61 @@ strong {
   transform: scale(1);
 }
 
+
+.redirect-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.redirect-loader h2 {
+  margin-bottom: 0;
+}
+
+.redirect-loader p {
+  opacity: 0.9;
+}
+
+.loader-bar {
+  width: 180px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.loader-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+  animation: loader-fill 1.8s ease-in-out forwards;
+}
+
+@keyframes loader-fill {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.redirect-error {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.redirect-error h2 {
+  margin-bottom: 0;
+}
+
+.redirect-error p {
+  opacity: 0.9;
+}
+
 .game-scene h2 {
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 800;
