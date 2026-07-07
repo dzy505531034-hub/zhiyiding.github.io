@@ -3,7 +3,7 @@
 > ✅ 模板仓库：`https://github.com/zhengchen1999/Home-Page-Template.git`  
 > ✅ 一次配置，后续只需 `git push` 即可更新
 
-### 一、准备仓库
+### 一、准备仓库啊
 
 1. 打开模板链接：
     👉 https://github.com/zhengchen1999/Home-Page-Template
